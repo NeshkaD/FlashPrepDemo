@@ -1,0 +1,33 @@
+<p></p>
+<div class="container">
+    <div class="row">
+        <div class="my-3 col-12 text-center">
+            <h1>Update card</h1>
+        </div>
+    </div>
+
+    <div *ngIf="isCardFound" class="create-card-form">
+        <div class="form-group">
+            <label for="card-front">Front of card: </label>
+            <textarea type="text" id="card-front" class="form-control" [(ngModel)]="cardFrontText" name="card-front"
+                required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="card-back">Back of card: </label>
+            <textarea type="text" id="card-back" class="form-control" [(ngModel)]="cardBackText" name="card-back"
+                required></textarea>
+        </div>
+
+        <button (click)="onClickUpdate()" class="btn btn-primary" [disabled]="!cardFrontText || !cardBackText">
+            Update
+        </button>
+        <button (click)="onClickCancel()" class="btn btn-secondary">
+            Cancel
+        </button>
+    </div>
+
+    <div *ngIf="errorMessageFromServer">
+        <p>{{errorMessageFromServer}}</p>
+    </div>
+</div>

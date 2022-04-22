@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "b41a36e8-936d-4e37-801a-eba3efe4ff4f",
+		"name": "flashprep",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getNext",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/deck/1/card",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deck",
+						"1",
+						"card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateWeightIncorrectAnswer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"isCorrect\":false}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/deck/1/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deck",
+						"1",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateWeightCorrectAnswer Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"isCorrect\":true}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/deck/1/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deck",
+						"1",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"username1\",\"password\":\"letmein1\"}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllDecksOfUser1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/user/1/decks",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"1",
+						"decks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDeckDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/deck/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deck",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resetWeightsInDeck1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/deck/1/reset",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deck",
+						"1",
+						"reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createUserX",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"user_x\", \"email\":\"user_x@emailservice.com\", \"password\":\"p@ssword1\"}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createDeckWithCards",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deckName\": \"deckTestCreate\",\r\n    \"deckDescription\": \"this is a new deck to test that creating a deck with cards works on the backend\",\r\n    \"userID\": 2,\r\n    \"cards\": [\r\n        {\r\n            \"cardFront\": \"example card create A\",\r\n            \"cardBack\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit..\"\r\n        },\r\n        {\r\n            \"cardFront\": \"example card create B\",\r\n            \"cardBack\": \"Donec quam ligula, consectetur at justo nec, pulvinar laoreet neque. \"\r\n        },\r\n        {\r\n            \"cardFront\": \"example card create C\",\r\n            \"cardBack\": \"Quisque sapien nulla, efficitur nec ullamcorper non, volutpat a elit.\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/deck",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createEmptyDeckWithEmptyCardArray",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deckName\": \"EmptyDeckCreatedWithEmptyCardArray\",\r\n    \"deckDescription\": \"this is a new emptydeck to test that creating a deck with no cards in the card array works on the backend\",\r\n    \"userID\": 2,\r\n    \"cards\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/deck",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createEmptyDeckWithNoCardArray",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deckName\": \"EmptyDeckCreatedWithEmptyCardArray\",\r\n    \"deckDescription\": \"this is a new empty deck to test that creating a deck with no card array works on the backend\",\r\n    \"userID\": 2,\r\n    \"cards\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/deck",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteDeckHardcoded",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/deck/6/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deck",
+						"6",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCardHardcoded",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/card/32",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"card",
+						"32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCard",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardID\": 7,\r\n    \"cardFront\": \"example card UPDATED\",\r\n    \"cardBack\": \"This is a test card. For testing purposes only. This is fake data. This is fake data. This is fake data. UPDATED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/card",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCardFrontOnly",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardID\": 7,\r\n    \"cardFront\": \"example card FRONT UPDATED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/card",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCardBackOnly",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardID\": 7,\r\n    \"cardBack\": \"This is an example of the back of a card. BACK UPDATED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/card",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCard",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deckID\": 2,\r\n    \"card\": {\r\n        \"cardFront\": \"example card CREATED\",\r\n        \"cardBack\": \"This is a CREATED test card. For testing purposes only. This is fake data. This is fake data. This is fake data.\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/card",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"card"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

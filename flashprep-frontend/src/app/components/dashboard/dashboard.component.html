@@ -1,0 +1,51 @@
+<ng-template #learnOptionsModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Study mode</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <p>Which study mode would you like to use?</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel')">Cancel</button>
+        <button type="button" class="btn btn-outline-primary" (click)="goToRegularStudyMode()">Regular Study Mode</button>
+        <button type="button" class="btn btn-success" (click)="goToAdaptiveStudyMode()">Adaptive Learning</button>
+    </div>
+</ng-template>
+
+<ng-template #deleteDeckModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Deleting deck: {{currentChosenDeck.name}}</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <p>
+            Are you sure you would like to delete your deck '{{currentChosenDeck.name}}'? 
+            <strong>This operation cannot be undone!</strong>
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel')">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="onClickConfirmDeleteButton($event)">Delete now</button>
+    </div>
+</ng-template>
+
+<h1>Dashboard</h1>
+<div>
+    <button id="create-deck-btn" type="button" class="btn btn-outline-success" (click)="onClickCreateButton($event)">Create New Deck</button>
+</div>
+<ul id="deck-list">
+    <li *ngFor="let deck of decks; let i = index">
+        <h6 id="{{'deck-name-'+i}}">Deck name: {{deck.name}}</h6>
+        <p id="{{'deck-description-'+i}}">Deck description: {{deck.description}}</p>
+        <button id="{{'deck-study-btn-'+i}}" type="button" class="btn btn-success" (click)="onClickLearnButton($event, deck, learnOptionsModal)">
+            Study
+        </button>
+        <button id="{{'deck-edit-btn-'+i}}" type="button" class="btn btn-secondary" (click)="onClickEditButton($event, deck)">
+            Edit
+        </button>
+        <button id="{{'deck-delete-btn-'+i}}" type="button" class="btn btn-danger" (click)="onClickDeleteButton($event, deck, deleteDeckModal)">
+            Delete
+        </button>
+    </li>
+</ul>

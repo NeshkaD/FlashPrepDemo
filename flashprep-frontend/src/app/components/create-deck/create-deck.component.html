@@ -1,0 +1,29 @@
+<h1>Create Deck</h1>
+<h4>Please upload a CSV file containing your cards.</h4>
+<div>
+    <div class="create-deck-form">
+        <div class="form-group">
+            <label for="deck-name">Deck name</label>
+            <input type="text" id="deck-name" class="form-control" [(ngModel)]="deckName" name="deck-name" required />
+        </div>
+
+        <div class="form-group">
+            <label for="deck-description">Deck description</label>
+            <input type="text" id="deck-description" class="form-control" [(ngModel)]="deckDescription"
+                name="deck-description" required />
+        </div>
+
+        <div id="file-selector" class="form-group">
+            <label for="file">Choose File</label>
+            <input type="file" id="file" (change)="onFileSelection($event)">
+        </div>
+
+        <button (click)="onSubmit()" class="btn btn-success">Submit</button>
+      
+  
+      <div *ngIf="errorMessageFromServer">
+        <p>{{errorMessageFromServer}}</p>
+      </div>
+
+    </div>
+</div>

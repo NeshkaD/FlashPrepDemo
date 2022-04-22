@@ -1,0 +1,57 @@
+<ng-template #deleteCardModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Confirm Delete</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Exit btn clicked')"></button>
+    </div>
+    <div class="modal-body">
+        <p>
+            Are you sure you would like to delete this card? 
+            <strong>This operation cannot be undone!</strong>
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('Cancel btn clicked')">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="onClickConfirmDeleteButton($event)">Delete now</button>
+    </div>
+</ng-template>
+
+
+<p></p>
+
+
+<div class="container">
+    <div class="row">
+        <div class="my-3 col-12 text-center">
+            <h1>Editing deck: {{deck.deckName}}</h1>
+        </div>
+    </div>
+    <div>
+        <button id="add-card-btn" type="button" class="btn btn-outline-success" (click)="onClickAddButton($event)">Add new card</button>
+    </div>
+
+    <div class="row" *ngFor="let card of deck.cards; let i = index">
+        <div id="{{'card-front-'+i}}"
+            class="edit-card-cell h5 my-3 col-4 text-center border d-flex align-items-center justify-content-center">
+            <div>
+                <p>{{card.cardFront}}</p>
+            </div>
+        </div>
+        <div id="{{'card-front-'+i}}"
+            class="edit-card-cell h5 my-3 col-4 text-center border d-flex align-items-center justify-content-center">
+            <div>
+                <p>{{card.cardBack}}</p>
+            </div>
+        </div>
+        <div id="{{'card-edit-btns'+i}}"
+            class="edit-card-cell h5 my-3 col-4 text-center border d-flex align-items-center justify-content-center">
+
+            <button id="{{'card-edit-btn'+i}}" type="button" class="edit-card-btn btn btn-secondary"
+            (click)="onClickEditCardButton($event, card)">Edit card</button>
+
+
+            <button id="{{'card-delete-btn'+i}}" type="button" class="delete-card-btn btn btn-danger"
+            (click)="onClickDeleteButton($event, card, deleteCardModal)">Delete card</button>
+
+        </div>
+    </div>
+</div>

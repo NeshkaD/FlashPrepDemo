@@ -1,0 +1,106 @@
+CREATE DATABASE IF NOT EXISTS flashprep;
+USE flashprep;
+
+CREATE TABLE `flashprep`.`user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(64) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  `password` VARCHAR(32) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
+
+CREATE TABLE `flashprep`.`deck` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `description` VARCHAR(1023) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_user_id_idx` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `user_id`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `flashprep`.`user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+CREATE TABLE `flashprep`.`card` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `deck_id` INT NOT NULL,
+  `front_text` VARCHAR(2047) NULL,
+  `back_text` VARCHAR(2047) NULL,
+  `weight` INT NULL DEFAULT 1,
+  PRIMARY KEY (`id`),
+  INDEX `deck_id_idx` (`deck_id` ASC) VISIBLE,
+  CONSTRAINT `deck_id`
+    FOREIGN KEY (`deck_id`)
+    REFERENCES `flashprep`.`deck` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION);
+
+INSERT INTO `flashprep`.`user`
+(`username`,
+`email`,
+`password`)
+VALUES
+('username1',
+'username1@emailservice.com',
+'letmein1'
+),
+('username2',
+'username2@emailservice.com',
+'letmein2'
+),
+('username3',
+'username3@emailservice.com',
+'letmein3'
+),
+('username4',
+'username4@emailservice.com',
+'letmein4'
+),
+('username5',
+'username5@emailservice.com',
+'letmein5'
+);
+
+INSERT INTO `flashprep`.`deck`
+(`user_id`,
+`name`,
+`description`)
+VALUES
+(1,
+'deck1',
+'first demo deck. Test data here.'),
+(1,
+'deck2',
+'second demo deck. Test data here.'),
+(2,
+'deck3',
+'3rd demo deck. Test data here.'),
+(3,
+'deck4',
+'4th demo deck. Test data here.');
+
+INSERT INTO `flashprep`.`card`
+(`deck_id`,
+`front_text`,
+`back_text`)
+VALUES
+(1,
+'example card 1',
+'This is the first test card. For testing purposes only. This is fake data. This is fake data. This is fake data.'),
+(1,
+'example card 2',
+'This is the second test card. For testing purposes only. This is fake data. This is fake data. This is fake data.'),
+(1,
+'example card 3',
+'This is the third test card. For testing purposes only. This is more fake data.'),
+(2,
+'example card 4',
+'This is the 4th test card. For testing purposes only. This is more fake data.'),
+(2,
+'example card 5',
+'This is the 5th test card. For testing purposes only. This is more fake data.'),
+(2,
+'example card 6',
+'This is the 6th test card. For testing purposes only. This is more fake data.');

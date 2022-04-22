@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="">FlashPrep</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="" routerLinkActive="active">Home</a>
+            </li>
+            <li class="nav-item">
+                <a id="dashboard-nav-btn" class="nav-link" routerLink="dashboard" routerLinkActive="active">Dashboard</a>
+            </li>
+            <li class="nav-item" *ngIf="!loggedInUser">
+                <a id="login-nav-btn" class="nav-link" routerLink="login" routerLinkActive="active">Login</a>
+            </li>
+            <li class="nav-item" *ngIf="!loggedInUser">
+                <a id="signup-nav-btn" class="nav-link" routerLink="signup" routerLinkActive="active">Sign Up</a>
+            </li>
+            <li class="nav-item" *ngIf="loggedInUser">
+                <a id="logout-nav-btn" class="nav-link" (click)="onClickLogoutButton($event)">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>

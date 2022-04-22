@@ -1,0 +1,38 @@
+<p> </p>
+<div>
+    <div class="submit-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          class="form-control"
+          [(ngModel)]="username"
+          name="username"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          [(ngModel)]="password"
+          name="password"
+          required
+        />
+      </div>
+  
+      <button (click)="login()" class="btn btn-success">Submit</button>
+      
+  
+      <div *ngIf="loginState==1">
+        <p>Signing you in - please wait!</p>
+      </div>
+      <div *ngIf="loginState==2">
+        <p>Sorry, that username or passsword was not valid. Please try again!</p>
+      </div>
+    </div>
+  </div>

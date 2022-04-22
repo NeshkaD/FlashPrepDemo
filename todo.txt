@@ -1,0 +1,98 @@
+Add CSV text box
+
+navbar doesn't work in cell phone size screen
+
+homepage still offers login and signup options when user is logged in
+
+Feature 2: Using the deck in study mode w/ Adaptive Feedback
+    UI: display cards - vague story. May the study page(s) need to look more pretty with some styling? maybe use bootstrap cards
+
+
+Feature 3: Login/Sign up Page
+    Home page for FlashPrep w/ link to sign up or login - maybe add some text to the home page and/or make it look pretty, but other than that we are good
+
+Flashprep logo - add to homepage and navbar
+
+Backend: ResetWeights function needs to return a success boolean and error message in returnObj. Currently it returns the output from the database, which is bad.
+
+Front-end Testing:
+==================
+
+Regular study mode:
+Test that a card is shown on first load of study page_________________________________________________________Done
+Test that flip card button flips the card.____________________________________________________________________Done
+Test that apiService makes 1 call to httpservice in each case
+Test that getting the next card works.________________________________________________________________________Done
+Test that deck data is successfully obtained__________________________________________________________________Done
+Test obtaining the deck data uses only one call to apiService_________________________________________________Done
+Test that there is a button that takes back to dashboard? Maybe this belongs in nav tests...
+
+Adaptive study mode:
+Test that first card is chosen by one call to ApiService_______________________________________________________Done
+Test that a card is shown on first load of study page__________________________________________________________Done
+Test that flip card button flips the card._____________________________________________________________________Done
+Test that 'next card' button asks the api service to make the http call to get next card from deck in db_______Done
+Test that 'next card' button successfuly obtains and displays the next card____________________________________Done
+Test that 'correct' button tells apiService to send put request with {isCorrect: true}_________________________Done
+Test that 'incorrect' button tells apiService to send put request with {isCorrect: false}______________________Done
+Test that reset function makes the http call to reset the weights._____________________________________________Done
+
+Navbar:
+test that dashboard button exists_____________________________________________________________________Done
+test that dashbboard button works
+test that login button exists when user not signed in_____________________________________________________________________Done
+test that login button does not exist when user is signed in______________________________________________________________Done
+test that signup button exists when user not signed in_____________________________________________________________________Done
+test that signup button does not exist when user is signed in______________________________________________________________Done
+test that logout button exists when user is signed in_____________________________________________________________________Done
+test that logout button does not exist when user is not signed in_________________________________________________________Done
+
+Login/Signup pages
+Nobody should be logged in by default when app starts._______________________________________________________________________Done
+ApiService getLoggedInUser() should get the logged in user stored in ApiService______________________________________________Done
+ApiService setLoggedInUser() should set the logged in user stored in ApiService______________________________________________Done
+Test that home page has buttons to signup or login___________________________________________________________________________Done
+Test that home page signup and login buttons actually work
+Test that signup page exists__________________________________________________________________________________________________Done
+Test that login page exists_____________________________________________________________________________________________________Done
+Test that login form has fields for username, password
+Test that use of invaid credential fails login____________________________________________________________________________Done
+Test that sign up form has fields for username, password, email
+Test that validation fails if username or email chosen are not unique.
+Test that login redirects to dashboard
+Test that login updates apiService loggedInUser value______________________________________________________________________________________Done
+Test that signup redirects to dashboard
+Test that signup updates apiService loggedInUser value______________________________________________________________________________________Done
+Test that log out updates apiService
+Test that logout hides dashboard/causes redirect?
+Sign up: test that 1 post http call is made to achieve signUp_______________________________________________________________________________Done
+Sign up: test that 1 post http call is made to achieve login after signUp succeeds__________________________________________________________Done
+Login: test that 1 post http call is made via apiService____________________________________________________________________________________Done
+Can we tets that user stays logged in by testing apiService value continuing to exist afte link clicks to move to different componenet?
+
+Dashboard:
+Component exists________________________________________________________________________________________________________Done
+Test that decks are shown on dashboard__________________________________________________________________________________Done
+Test that http call to get decks is made once___________________________________________________________________________Done
+Test that add deck button exists________________________________________________________________________________________Done
+Test that add deck button goes to add deck page
+Test that edit deck button exists for each deck_________________________________________________________________________Done
+Test that edit deck button goes to add deck page
+Test that remove deck button exists for each deck_______________________________________________________________________Done
+Test that remove deck button opens modal
+Test that remove modal has Cancel button
+Test that remove modal has Confirm Remove button
+Test that Cancel button closes the Remove modal
+Test that Confirm Remove button calls remove deck http method once
+Test that each deck has a study button_________________________________________________________________________________Done
+Test that study button opens modal0
+Test that Regular Study button takes use to Regular Study page
+Test that Adaptive Study button takes use to Regular Study page
+Test that Cancel button close the Study Modal
+
+
+Back-end Testing:
+==================
+
+Integration/Functional Testing (Postman):
+=========================================

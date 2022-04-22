@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="my-3 col-12 text-center">
+            <h1>Regular Study Mode: {{deck.deckName}}</h1>
+        </div>
+    </div>
+    <div class="row">
+      <div id="card" class="col-8 offset-2 text-center border d-flex align-items-center justify-content-center">
+        <p class="h3" *ngIf="isCardFrontShowing">{{deck.cards[currentPositionInDeck].cardFront}}</p>
+        <p class="h3" *ngIf="!isCardFrontShowing">{{deck.cards[currentPositionInDeck].cardBack}}</p>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-2 offset-4 text-center my-3 p-3">
+          <button id="flip-btn" type="button" class="btn btn-primary" (click)="onClickFlipButton($event)">Flip card</button>
+        </div>
+        <div class="col-2 text-center my-3 p-3">
+          <button id="next-btn" type="button" class="btn btn-secondary" (click)="onClickNextButton($event)">Next Card</button>
+        </div>
+    </div>
+      
+</div>
