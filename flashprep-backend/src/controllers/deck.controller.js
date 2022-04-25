@@ -5,11 +5,6 @@ exports.weighted = (arr, weights_arr) => {
     return this.ch.weighted(arr, weights_arr);
 };
 
-// Returns a map of cardIds to weight values for every card in the given deck
-// function getAllCardWeights(deckId) {
-//     Card.findAllByDeckId(deckId, console.log);
-// }
-
 // Chooses a row from the card table randomly using weighted probability.
 exports.getWeightedChoice = (cards) => {
     console.log(cards);
