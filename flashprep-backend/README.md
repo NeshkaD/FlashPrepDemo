@@ -32,8 +32,6 @@ Running a test is easy.
 
 
 
-```
-
 ## API Documentation
 
 
