@@ -26,9 +26,6 @@ describe('SignUpComponent', () => {
     const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
     apiServiceSpy = jasmine.createSpyObj('ApiService', ['setLoggedInUser', 'login', 'signUp']);
 
-    // const loginSpy = apiServiceSpy.login.and.returnValue(of(testSuccessfulLoginResult)); // return Observable using rxjs
-    // const signUpSpy = apiServiceSpy.signUp.and.returnValue(of(testSuccessfulSignUp)); // return Observable using rxjs
-
     await TestBed.configureTestingModule({
       declarations: [ SignUpComponent ],
       providers: [{ provide: ApiService, useValue: apiServiceSpy }, { provide: Router, useValue: routerSpy }]
