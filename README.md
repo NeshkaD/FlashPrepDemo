@@ -6,7 +6,7 @@ Whenever a student gets a card incorrect, the card appears more frequently than 
 
 
 ## Technical Specifications:
-FlashPrep's front end uses Angular 11 & Jasmine JavaScript Testing Framework.
+FlashPrep's front end uses Angular 11 & Jasmine JavaScript Testing Framework. \
 FlashPrep's back end uses ExpressJS, NodeJS, Jasmine JavaScript Testing Framework, & MySQL database.
 
 
