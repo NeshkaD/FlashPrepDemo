@@ -1,4 +1,4 @@
-# README #
+# FlashPrep API Backend README #
 
 ### What is this repository for? ###
 
