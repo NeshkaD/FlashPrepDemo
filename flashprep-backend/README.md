@@ -20,7 +20,7 @@ This is the back end API for FlashPrep
     This will start the server on `http://localhost:8080/ `
 
 ### Run Test
-Running a test is easy.
+Running the test suite is easy.
 1. Run the following command `npm test` 
 
 ### Who do I talk to? ###
