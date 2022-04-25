@@ -1,5 +1,3 @@
-// TODO: separate cards, decks, and users into separate routers.
-
 module.exports = web_app => {
     let router = require("express").Router();
     const cardController = require("../controllers/card.controller.js"); // TODO: add routes for card operations
