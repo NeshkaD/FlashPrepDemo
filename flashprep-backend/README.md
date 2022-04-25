@@ -17,7 +17,7 @@ This is the back end API for FlashPrep
 
     `node ./server.js`
 
-    This will start the server on `http://localhost:8080/ ` or please check your .env file
+    This will start the server on `http://localhost:8080/ `
 
 ### Run Test
 Running a test is easy.
