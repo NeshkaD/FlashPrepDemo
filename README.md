@@ -14,6 +14,13 @@ FlashPrep's back end uses ExpressJS, NodeJS, Jasmine JavaScript Testing Framewor
 ## Instructions for running:
 To run, please note that the front end and back end run on separate ports. First run the back end server (see /flashprep-backend README.md for instructions). Next start the front end web application (see /flashprep-front README.md for instructions).
 
+Please ensure that you have the following downloaded and configured on your machine:
+Node Package Manager (NPM)\
+Angular CLI (version 11+) \
+ExpressJS \
+MySQL \
+NodeJS
+
 
 
 ## Contributers:
