@@ -31,4 +31,4 @@ Gustavo Cruz-Medina (Scrum Master)
 
 ## FlashPrep Web Application Pictures
 
-!(img/flashprep_logo_trans.png)
+![](img/flashprep_logo_trans.png)
