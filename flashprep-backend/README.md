@@ -23,11 +23,6 @@ This is the back end API for FlashPrep
 Running a test is easy.
 1. Run the following command `npm test` 
 
-##### Suggested Package on Production Environment
-* [PM2](https://www.npmjs.com/package/pm2)
-* [Forever](https://www.npmjs.com/package/forever)
-* etc
-
 ### Who do I talk to? ###
 
 * Jared Barber (Product Manager) 
