@@ -31,4 +31,17 @@ Gustavo Cruz-Medina (Scrum Master)
 
 ## FlashPrep Web Application Pictures
 
-![](img/flashprep_logo_trans.png)
+![](img/adaptive_feedback_study_mode.png)
+![](img/create_add_new_card_to_deck.png)
+![](img/create_deck_upload_csv.png)
+![](img/dashboard.png)
+![](img/delete_deck_dialogue.png)
+![](img/edit_deck_page.png)
+![](img/edit_update_card.png)
+![](img/home.png)
+![](img/login.png)
+![](img/regular_study_mode.png)
+![](img/sign_up.png)
+![](img/study_mode_option_with_dashboard.png)
+![](img/study_mode_options_dialogue.png)
+
