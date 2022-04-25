@@ -12,7 +12,7 @@ FlashPrep's back end uses ExpressJS, NodeJS, Jasmine JavaScript Testing Framewor
 
 
 ## Instructions for running:
-Please ensure that you have the following downloaded and configured on your machine:
+Please ensure that you have the following downloaded and configured on your machine: \
 Node Package Manager (NPM)\
 Angular CLI (version 11+) \
 ExpressJS \
