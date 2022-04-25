@@ -1,11 +1,9 @@
 module.exports = web_app => {
     let router = require("express").Router();
-    const cardController = require("../controllers/card.controller.js"); // TODO: add routes for card operations
+    const cardController = require("../controllers/card.controller.js"); 
     const deckController = require("../controllers/deck.controller.js");
     const userController = require("../controllers/user.controller.js");
     const authController = require("../controllers/auth.controller.js");
-
-
   
     // Select a card from the deck based on weighted probability:
     router.get("/deck/:deckId/card", deckController.getNext); // deckId is a 'route parameter': https://expressjs.com/en/guide/routing.html
