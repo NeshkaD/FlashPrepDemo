@@ -1,6 +1,6 @@
 let db = require('./mysql_db.js');
 
-// ctr
+// constructor
 const Deck = function(deck) {
     this.id = deck.id;
     this.userId = deck.userId;
