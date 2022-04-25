@@ -193,20 +193,6 @@ describe("User controller unit test suite", () => {
         expect(response).toEqual(expectedResponse);
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     it("should return failure result in response when username not provided (RainyDay test)", () => {
         // set up:
         let testUsername = '';
