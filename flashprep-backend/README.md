@@ -13,8 +13,6 @@ This is the back end API for FlashPrep
 
     `npm install`
 
-* Copy `.env.example` to `.env` and then set the key based on need
-
 * To run the application for development purposes
 
     `node ./server.js`
