@@ -1,7 +1,7 @@
 # FlashPrep
 
 
-FlashPrep is a online flash card software that uses an adaptive feedback algorithm to increase a student's studying efficiency. 
+FlashPrep is an online flash card software that uses an adaptive feedback algorithm to increase a student's studying efficiency. 
 Whenever a student gets a card incorrect, the card appears more frequently than cards the student gets correct.
 
 ![FlashPrep logo](img/flashprep_logo_trans.png)
