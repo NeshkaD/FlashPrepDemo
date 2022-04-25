@@ -68,15 +68,6 @@ describe('StudyRegularComponent', () => {
   });
 
   it('should display the back of the first card after flip button clicked', () => {
-    // spyOn(component, 'onClickFlipButton');
-    // let flipButtonDebugElement = fixture.debugElement.query(By.css('#flip-btn'));
-    // flipButtonDebugElement.triggerEventHandler('click', null);
-    // tick();
-    // fixture.detectChanges();
-    // let cardElement = fixture.nativeElement.querySelector('#card');
-    // //expect(component.onClickFlipButton).toHaveBeenCalled();
-    // expect(cardElement.textContent).toContain("This is the first test card. For testing purposes only. This is fake data. This is fake data. This is fake data.");
-
     let flipButtonDebugElement = fixture.debugElement.query(By.css('#flip-btn'));
     flipButtonDebugElement.triggerEventHandler('click', null);
     fixture.detectChanges();
